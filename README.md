@@ -184,7 +184,7 @@ POST /sync/reports
 
 ## Observed Test Run
 
-2026-06-04에 로컬 PostgreSQL과 실제 AWS SQS(`report-requested-queue`)를 사용해서 짧은 검증을 진행했습니다.
+2026-06-04에 로컬 PostgreSQL과 실제 AWS SQS(`report-requested-queue`)를 사용해서 검증을 진행했습니다.
 
 20초 smoke test 결과:
 
@@ -193,12 +193,17 @@ POST /sync/reports
 | async | 3 | 3 | 0 | 97.4 | 211.54 | 3009.33 |
 | sync | 3 | 3 | 0 | 3035.48 | 3039.58 | 3009.67 |
 
-30분 시나리오는 중간에 중단했고, 중단 시점까지 콘솔에서 확인한 샘플은 아래와 같습니다.
+30분 시나리오 결과:
 
-| mode | observed count | success | failed | avg response ms | p95 response ms |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| async | 11 | 11 | 0 | 38.11 | 49.31 |
-| sync | 10 | 10 | 0 | 3030.42 | 3037.57 |
+| mode | count | success | failed | avg response ms | p95 response ms | avg processing ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| async | 107 | 107 | 0 | 36.52 | 73.33 | 3007.49 |
+| sync | 107 | 107 | 0 | 3021.85 | 3028.6 | 3006.95 |
+
+상세 결과 파일:
+
+- [20초 smoke test](docs/test-runs/sqs-scenario-20260604T040524.850734Z0000.md)
+- [30분 scenario test](docs/test-runs/sqs-scenario-20260604T041535.880930Z0000.md)
 
 이 결과에서 봐야 할 포인트는 `async` 처리 시간이 사라진 것이 아니라, API 응답 경로에서 분리되었다는 점입니다. `POST /reports`는 DB 저장과 SQS 발행까지만 하고 빠르게 응답했고, 실제 3초짜리 리포트 생성은 worker가 뒤에서 처리했습니다.
 

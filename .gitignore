@@ -4,6 +4,7 @@ HELP.md
 !.env.example
 __pycache__/
 *.pyc
+logs/
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
