@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sqs_study;MODE=PostgreSQL
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+app:
+  report:
+    default-delay-millis: 1
+    slow-delay-millis: 1
+  sqs:
+    enabled: false
+    endpoint: http://localhost:4566
+    region: ap-northeast-2
+    queue-name: report-requested-queue
+    queue-url:
+    access-key: test
+    secret-key: test
+    session-token:
+    poll-delay-millis: 1000
+    max-messages: 5
+    wait-time-seconds: 1
+    visibility-timeout-seconds: 30

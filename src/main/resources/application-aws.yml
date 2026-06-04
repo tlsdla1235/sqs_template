@@ -1,0 +1,18 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+
+app:
+  sqs:
+    enabled: true
+    endpoint:
+    region: "${AWS_REGION:ap-northeast-2}"
+    queue-name: "${REPORT_REQUESTED_QUEUE_NAME:report-requested-queue}"
+    queue-url: "${REPORT_REQUESTED_QUEUE_URL:https://sqs.ap-northeast-2.amazonaws.com/491013322019/report-requested-queue}"
+    access-key: "${AWS_ACCESS_KEY_ID:}"
+    secret-key: "${AWS_SECRET_ACCESS_KEY:}"
+    session-token: "${AWS_SESSION_TOKEN:}"
+    poll-delay-millis: 1000
+    max-messages: 5
+    wait-time-seconds: 10
+    visibility-timeout-seconds: 30

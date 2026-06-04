@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-06-04T04:05:24.850734+00:00",
+  "finished_at": "2026-06-04T04:05:49.438772+00:00",
+  "base_url": "http://localhost:8081",
+  "duration_seconds": 20,
+  "interval_seconds": 2.0,
+  "summary": {
+    "async": {
+      "count": 3,
+      "success": 3,
+      "failed": 0,
+      "response_avg_ms": 97.4,
+      "response_p95_ms": 211.54,
+      "processing_avg_ms": 3009.33
+    },
+    "sync": {
+      "count": 3,
+      "success": 3,
+      "failed": 0,
+      "response_avg_ms": 3035.48,
+      "response_p95_ms": 3039.58,
+      "processing_avg_ms": 3009.67
+    }
+  },
+  "results": [
+    {
+      "mode": "async",
+      "title": "scenario-async-20260604040524-1",
+      "ok": true,
+      "status_code": 202,
+      "response_millis": 211.54195800045272,
+      "processing_millis": 3010,
+      "completion_wait_millis": 3052.695999998832,
+      "report_id": "75bb1ddc-df8a-46c6-919f-4bd5370700f7",
+      "final_status": "COMPLETED",
+      "error": null
+    },
+    {
+      "mode": "sync",
+      "title": "scenario-sync-20260604040524-1",
+      "ok": true,
+      "status_code": 201,
+      "response_millis": 3028.3992499989836,
+      "processing_millis": 3008,
+      "completion_wait_millis": null,
+      "report_id": "f8754409-c87a-4a4f-bab7-80176771f011",
+      "final_status": "COMPLETED",
+      "error": null
+    },
+    {
+      "mode": "async",
+      "title": "scenario-async-20260604040533-2",
+      "ok": true,
+      "status_code": 202,
+      "response_millis": 41.995083000074374,
+      "processing_millis": 3010,
+      "completion_wait_millis": 4066.907499998706,
+      "report_id": "6274b4e8-2f8c-4a3f-babe-60b90ed0455e",
+      "final_status": "COMPLETED",
+      "error": null
+    },
+    {
+      "mode": "sync",
+      "title": "scenario-sync-20260604040533-2",
+      "ok": true,
+      "status_code": 201,
+      "response_millis": 3039.5847500003583,
+      "processing_millis": 3010,
+      "completion_wait_millis": null,
+      "report_id": "cc04d5e9-2de0-4652-95bb-03d5951b084e",
+      "final_status": "COMPLETED",
+      "error": null
+    },
+    {
+      "mode": "async",
+      "title": "scenario-async-20260604040542-3",
+      "ok": true,
+      "status_code": 202,
+      "response_millis": 38.65929200037499,
+      "processing_millis": 3008,
+      "completion_wait_millis": 4055.1684590009245,
+      "report_id": "19ca91ed-da6c-42b6-93d2-996fd70b940e",
+      "final_status": "COMPLETED",
+      "error": null
+    },
+    {
+      "mode": "sync",
+      "title": "scenario-sync-20260604040542-3",
+      "ok": true,
+      "status_code": 201,
+      "response_millis": 3038.4438330002013,
+      "processing_millis": 3011,
+      "completion_wait_millis": null,
+      "report_id": "34048ddc-9657-40ed-bacb-c76fcbf39730",
+      "final_status": "COMPLETED",
+      "error": null
+    }
+  ]
+}

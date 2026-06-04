@@ -1,0 +1,49 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: sqs-template
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sqs_study
+    username: sqs_user
+    password: sqs_password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: sqs-template
+
+app:
+  report:
+    default-delay-millis: 3000
+    slow-delay-millis: 5000
+  sqs:
+    enabled: true
+    endpoint: http://localhost:4566
+    region: ap-northeast-2
+    queue-name: report-requested-queue
+    queue-url:
+    access-key: test
+    secret-key: test
+    session-token:
+    poll-delay-millis: 1000
+    max-messages: 5
+    wait-time-seconds: 1
+    visibility-timeout-seconds: 30
